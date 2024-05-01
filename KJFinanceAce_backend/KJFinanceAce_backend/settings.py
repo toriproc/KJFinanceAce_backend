@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'KJFinanceAceApp',
 ]
 
@@ -49,7 +50,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # リクエストを許可するオリジン
+]
+
+# すべてのオリジンからのリクエストを許可
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'KJFinanceAce_backend.urls'
 
