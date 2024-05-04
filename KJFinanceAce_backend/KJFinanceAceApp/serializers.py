@@ -4,4 +4,4 @@ from .models import InvestmentInfo
 class InvestmentInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = InvestmentInfo
-        fields = ['date', 'name', 'totalInvestmentAmount', 'genzaiAmount']
+        fields = ['key', 'date', 'name', 'totalInvestmentAmount', 'genzaiAmount']
